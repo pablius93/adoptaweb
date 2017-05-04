@@ -1,0 +1,67 @@
+<nav id="navbar" class="navbar">
+    <div class="navbar-left-btns">
+       <ul>
+           <li id="nav-button">
+               <i id="nav-button-i" class="open-sidenav-btn fa fa-bars" onclick="openNav()"></i>
+           </li>
+           <li id="home">
+               <a href="{% url 'main:index' %}">
+                   <i class="fa fa-home"></i>
+                   <span>Inicio</span>
+               </a>
+            </li>
+           <li id="my-profile">
+               <a href="{% url 'main:my_profile' %}">
+                   <i class="fa fa-user"></i>
+                   <span>Mi Perfil</span>
+               </a>
+            </li>
+           <li id="messages">
+                <a href="{% url 'main:messages' %}">
+                    <i class="fa fa-envelope"></i>
+                    <span>Mensajes</span>
+                </a>
+            </li>
+       </ul>
+    </div>
+    <div class="navbar-center">
+        <span class="sitename"><a href="{% url 'main:index' %}"><i class="fa fa-paw"></i>{{ SITE_NAME }}</a></span>
+    </div>
+    <div class="navbar-right-btns">
+        <ul>
+            <li>
+                <form class="navbar-search-form" method="get" action="{% url 'main:search' %}">
+
+                    {{ search_form.q }}
+                    <span>
+                        <button class="search-button" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </form>
+                <div id="dropdown-search-box">
+
+                </div>
+            </li>
+            <li id="profile-menu">
+                <button class="user-btn"><i class="fa fa-user-circle"></i></button>
+                <div class="profile-hidden-menu">
+                    <ul>
+                        <li class="profile-hidden-menu-item">
+                            <a href=""><i class="fa fa-cog"></i>Preferencias</a>
+                        </li>
+                        <li class="profile-hidden-menu-item">
+                            <a href="{% url 'account_logout' %}"><i class="fa fa-close"></i>Cerrar sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#new-adoption" id="new" class="btn"><i class="fa fa-plus"></i><span>Nueva adopción</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% block templatejs %}
+
+{% endblock %}

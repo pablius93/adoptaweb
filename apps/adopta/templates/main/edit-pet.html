@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+{% load adoptions_tags %}
+
+{% block content %}
+<div class="main-panel">
+
+</div>
+{% endblock %}
+
+{% block fab-buttons %}
+<a class="fa-btn" href="#new-adoption">
+    <i class="fa fa-plus"></i>
+</a>
+{% endblock %}
+
+
+{% block modal %}
+<aside id="new-adoption" class="new-adoption-modal">
+    <div class="adoption-modal-content">
+        <header>
+            <h2>Nueva adopción</h2>
+            <a class="btn-close" href="#">x</a>
+        </header>
+        {% include 'main/new-adoption-form.html' %}
+    </div>
+</aside>
+{% endblock %}

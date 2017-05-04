@@ -1,0 +1,6 @@
+<form method="post" action="{% url 'main:new_adoption_request' pet.id pet.slug %}">
+    {% csrf_token %}
+    <label for="why">Explica brevemente por qué quieres adoptarlo</label><br>
+    {{ adoption_request_form.why }}<br>
+    <input type="submit" class="btn light" value="Enviar">
+</form>

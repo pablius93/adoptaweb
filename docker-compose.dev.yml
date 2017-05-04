@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  pgdb:
+    build:
+      context: .
+      dockerfile: ./docker/db/Dockerfile
+    ports:
+      - 2345:5432

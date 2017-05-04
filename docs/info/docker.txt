@@ -1,0 +1,17 @@
+###############
+# Docker info #
+###############
+
+# First of all, you need to build docker-compose
+$ docker-compose build
+
+if docker-compose up fails, then stop it
+$ docker-compose stop
+and start it again
+$ docker-compose start
+
+if something fails in your web container, you can do
+$ docker ps   -- To get your web container name
+$ docker exec -it <your-web-container-name> /bin/bash
+Then, you can check what happens from inside the container
+

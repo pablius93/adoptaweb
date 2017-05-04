@@ -1,0 +1,22 @@
+# Created by https://www.gitignore.io/api/django
+
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+migrations/
+local_settings.py
+media
+apps/main/static/*
+apps/main/templates/main/index.html
+staticfiles/
+env/
+.env
+.env.dev
+
+# python:3.6-onbuild image requires a requirements.txt file to build the container
+# You can create it empty:
+# touch requirements.txt
+/requirements.txt
+# End of https://www.gitignore.io/api/django

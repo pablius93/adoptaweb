@@ -1,0 +1,9 @@
+{% load adoptions_tags %}
+{% for pet in pets %}
+<article class="pet-item">
+    <a href="{% url pet.id pet.slug %}"><img src="{{ pet.images[0] }}" alt="{{ pet.name }}"></a>
+    <h3 class="pet-item-header"><a href="{% url pet.id pet.slug %}">{{ pet.name }}</a></h3>
+    <h6>32 días buscando hogar</h6>
+    <p class="pet-item-description">{{ pet.description }}</p>
+</article>
+{% endfor %}

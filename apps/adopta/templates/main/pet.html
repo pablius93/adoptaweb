@@ -1,0 +1,127 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load adoptions_tags %}
+{% block css %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/pet.css' %}" />
+{% if not user.is_authenticated %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/intro.css' %}" />
+{% endif %}
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+{% endblock %}
+
+{% block content %}
+<div class="pet-panel">
+   <section class="pet-header">
+       {% get_first_image pet as image %}
+       {% get_days_waiting pet as days %}
+       {% request_exists pet request.user as exists %}
+       <a href="#pet-image-modal"><img src="{{ MEDIA_URL }}{{ image }}" alt="{{ pet.name }}"/></a>
+       <div class="pet-description">
+           <header>
+               <h2 id="{{ pet.id }}">{{ pet.name }}</h2>
+               <h5>{{days}} día{{ days| pluralize }} esperando un nuevo hogar.</h5>
+           </header>
+           <p>
+           {{ pet.description|linebreaksbr }}
+           </p>
+           <div class="pet-adoption-btn-section">
+             <div>
+                 {% if request.user == pet.owner %}
+                 <a href="#" class="btn red">Eliminar</a>
+                 <a href="#" class="btn yellow">Editar</a>
+                 {% endif %}
+             </div>
+             <div>
+               {% if pet.owner != request.user and not exists and user.is_authenticated %}
+                 <a href="#adopt-pet-modal" class="btn light">¡Quiero adoptarlo!</a>
+               {% endif %}
+             </div>
+           </div>
+       </div>
+   </section>
+   <div class="pet-content">
+       <div class="pet-info-panel">
+           <div id="map"></div>
+           <header><h2>Información detallada</h2></header>
+           <table id="contact-info-table">
+               <tr>
+                   <td>Dueño: </td>
+                   <td id="cell-pet-owner">{{ contact_info.complete_name }}</td>
+               </tr>
+               <tr>
+                   <td>Dirección: </td>
+                   <td id="cell-address">{{ contact_info.address }}</td>
+               </tr>
+               <tr>
+                   <td>Localidad: </td>
+                   <td id="cell-city">{{ contact_info.city }}</td>
+               </tr>
+               <tr>
+                   <td>Teléfono de contacto: </td>
+                   <td id="cell-phone-number">{{ contact_info.phone_number }}</td>
+               </tr>
+           </table>
+       </div>
+       <div class="pet-info-updates" id="pet-info-updates">
+            <h2>Actualizaciones de estado</h2>
+            {% if request.user == pet.owner %}
+            <article class="pet-update">
+                <form id="new-pet-update-form" class="new-pet-update-form" method="post">
+                    {% csrf_token %}
+                    {{ pet_update_form.content }}
+                    <button onclick="sendUpdate()" type="button" class="btn light">Enviar</button>
+                </form>
+            </article>
+            <div id="pet-info-updates-posts">
+                {% include 'main/pet-update.html' %}
+            </div>
+            {% endif %}
+
+       </div>
+   </div>
+</div>
+{% endblock %}
+
+{% block modal %}
+<aside id="pet-image-modal" class="img-modal">
+  {% get_first_image pet as img %}
+   <div class="img-content">
+        <img src="{{ MEDIA_URL }}{{ img }}" alt="{{ pet.name }}">
+        <a href="#" class="btn-close">x</a>
+   </div>
+</aside>
+
+{% if pet.owner != request.user and not exists%}
+<aside id="adopt-pet-modal" class="img-modal">
+   <div class="adopt-pet-modal-content">
+        <div class="adopt-form">
+            <header>
+                <h2>Rellenar solicitud de adopción</h2>
+                <a href="#" class="btn-close">x</a>
+            </header>
+            {% include 'main/adoption-request.html' %}
+        </div>
+   </div>
+</aside>
+{% endif %}
+
+<aside id="new-adoption" class="new-adoption-modal">
+    <div class="adoption-modal-content">
+        <header>
+            <h2>Nueva adopción</h2>
+            <a class="btn-close" href="#">x</a>
+        </header>
+        {% include 'main/new-adoption-form.html' %}
+    </div>
+</aside>
+{% endblock %}
+{% block templatejs %}
+<script>var currentPet = {{ pet.id }}</script>
+<script src="{% static 'js/contact-info-map.js' %}"></script>
+<script src="{% static 'js/pet-updates.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAPS_API_KEY }}&callback=contactInfoMap"></script>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{% include 'main/pet-cards.html' %}
+<!-- Pagination -->
+<nav class="center">
+    <nav>
+        <ul class="pager pg-dark">
+            {% if active > 1 %}
+            <li><a href="{% url 'main:pets' %}?pagina={{ previous }}">Anterior</a></li>
+            {% endif %}
+            {% if active < last_page %}
+            <li><a href="{% url 'main:pets' %}?pagina={{ next }}">Siguiente</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</nav>
+<!-- /.Pagination -->
+{% endblock %}

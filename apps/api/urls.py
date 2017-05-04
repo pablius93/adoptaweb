@@ -1,0 +1,60 @@
+from django.conf.urls import url
+from . import views
+
+urlpatterns = [
+    url(
+        regex=r'^crear-api-keys/$',
+        view=views.create_api_keys,
+        name='create_api_keys'
+    ),
+    url(
+        regex=r'^mascotas/(?P<pet_id>[0-9]+)/$',
+        view=views.pet,
+        name='get_pet'
+    ),
+    url(
+        regex=r'^mascotas/$',
+        view=views.search_pet,
+        name='search_pet'
+    ),
+    url(
+        regex=r'^mascotas/todas/$',
+        view=views.pets,
+        name='pets'
+    ),
+    url(
+        regex=r'^mascotas/imagenes/$',
+        view=views.get_image,
+        name='get_image'
+    ),
+    url(
+        regex=r'^informacion-contacto/(?P<contact_id>[0-9]+)/$',
+        view=views.pet,
+        name='get_contact_info'
+    ),
+    url(
+        regex=r'^chat/(?P<chat_id>[0-9]+)/recibir/$',
+        view=views.get_messages,
+        name='get_messages'
+    ),
+    url(
+        regex=r'^chat/(?P<chat_id>[0-9]+)/enviar/$',
+        view=views.post_message,
+        name='post_message'
+    ),
+    url(
+        regex=r'^chats/$',
+        view=views.get_chats,
+        name='get_chats'
+    ),
+    url(
+        regex=r'^chat/(?P<chat_id>[0-9]+)/$',
+        view=views.get_chat,
+        name='get_chat'
+    ),
+    url(
+        regex=r'^mascota/(?P<pet_id>[0-9]+)/nueva-actualizacion/$',
+        view=views.new_pet_update,
+        name='new_pet_update'
+    )
+]

@@ -1,0 +1,327 @@
+.pet-panel {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-top: 80px;
+    background: white;
+    margin: 2em;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+}
+
+.pet-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.pet-header img {
+    max-height: 360px;
+    max-width: 480px;
+    margin: 1em;
+    border-radius: 8px;
+}
+
+.pet-header h2 {
+    width: 100%;
+    text-align: center;
+}
+
+.pet-description {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0 1.5em 1.5em 1.5em;
+}
+
+.pet-description a {
+    display: inline-block;
+}
+
+.pet-description p {
+    min-height: 100px;
+}
+
+.pet-description header {
+    text-align: center;
+}
+
+.pet-adoption-btn-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.pet-adoption-btn-section .btn {
+    margin-right: 1em;
+}
+
+.pet-info-panel {
+    border-radius: 8px;
+    margin: 0 1em 0 0;
+    border: solid 1px #DCDCDC;
+    max-height: 640px;
+    padding: 1em;
+}
+
+.pet-info-panel td {
+    padding: .2em 1em .2em 1em;
+}
+
+.pet-info-panel th {
+    text-align: center;
+}
+
+.pet-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.pet-info-updates {
+    width: 100%;
+    overflow-y: scroll;
+    padding: .5em;
+    border: solid 1px #DCDCDC;
+    border-radius: 4px;
+    max-height: 500px;
+}
+
+.pet-update {
+    border-radius: 8px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.18);
+    padding: 1em;
+    margin: .5em;
+}
+
+.pet-update:hover {
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+.pet-info-updates h2 {
+    text-align: center;
+}
+
+
+.pet-update h4, .pet-update h6, .pet-update i  {
+    margin: 0;
+}
+
+.pet-update a {
+    color: #123131;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.pet-update i {
+    margin-right: 8px;
+}
+
+.new-pet-update-form .btn {
+    color: white;
+}
+
+.new-pet-update-form textarea {
+    width: 100%;
+    margin: 0 0 .5em 0;
+}
+
+.new-pet-update-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+/* MODALS */
+.img-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.img-content {
+    position: relative;
+    margin: 5% 15% 5% 15%;
+    /* display: -webkit-box; */
+}
+
+.img-modal img {
+    max-width: 90%;
+    border-radius: 8px;
+}
+
+.img-content a {
+    position: absolute;
+    right: 5%;
+}
+
+.img-modal:target {
+    z-index: 11111;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.adopt-form {
+    background: white;
+    min-width: 90%;
+    padding: 1em;
+    border-radius: 8px;
+}
+
+.adopt-pet-modal-content {
+    display: flex;
+    margin: 100px 30%;
+    justify-content: center;
+}
+
+.adopt-form header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.adopt-form input:not([type='submit']) {
+    border: 0;
+    padding: 8px;
+    margin-right: 8px;
+    border-bottom: solid 1px #DCDCDC;
+    margin-bottom: .5em;
+}
+
+.adopt-form header h2 {
+    margin: 0;
+}
+
+.adopt-form a {
+    color: black;
+}
+
+.pet-info-panel header h2 {
+    text-align: center;
+    margin: .45em;
+}
+
+#map {
+    min-height: 200px;
+    width: 100%;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 1080px), (max-device-width: 1080px) {
+    .pet-header {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -ms-grid-row-align: center;
+        align-items: center;
+    }
+
+    .pet-content {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .pet-info-panel {
+        padding: 0 0 1em 0;
+        margin-bottom: 1em;
+        margin-right: 0;
+    }
+
+    .pet-info-updates {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .pet-header img {
+        max-height: 360px;
+        max-width: 90%;
+        margin: 1em;
+        border-radius: 8px;
+    }
+
+    .img-content {
+        position: relative;
+        margin: 5% 5% 5% 5%;
+    }
+
+    .img-content img {
+        position: relative;
+        margin: 5% 5% 5% 5%;
+        min-width: 90%;
+        max-width: 90%;
+    }
+
+    .img-content a {
+        position: absolute;
+        top: 8%;
+        right: 6%;
+    }
+
+    .adopt-pet-modal-content {
+        min-width: 80%;
+        margin: 2% 10%;
+    }
+
+    .adopt-form {
+        min-width: 0;
+    }
+}
+
+@media only screen and (max-width: 600px), (max-device-width: 600px) {
+    .adopt-pet-modal-content {
+        min-width: 80%;
+        margin: 2% 10%;
+    }
+
+    .adopt-form {
+        min-width: 0;
+    }
+}
+
+@media only screen and (max-height: 400px), (max-device-height: 400px) {
+    .adopt-form textarea {
+        max-height: 60px;
+    }
+}

@@ -1,0 +1,7 @@
+# Development dependencies
+
+-r base.txt
+
+django-debug-toolbar
+django-extensions
+django-cors-headers

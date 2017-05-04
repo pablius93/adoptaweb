@@ -1,0 +1,16 @@
+# Base dependencies
+
+django
+
+# Environment variables
+django-environ
+
+# Authentication
+django-allauth
+
+# REST
+djangorestframework
+django-rest-auth
+
+# Database
+psycopg2

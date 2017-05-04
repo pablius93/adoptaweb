@@ -1,0 +1,48 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load adoptions_tags %}
+{% block content %}
+<div class="main-panel">
+    <div id="pet-grid" class="grid-layout">
+{% for pet in pets %}
+{% get_days_waiting pet as days %}
+{% get_first_image pet as image %}
+    <article class="pet-item">
+        <a href="{% url 'main:pet_detail' pet.id pet.slug %}">
+           <img src="{{ MEDIA_URL }}{{ image }}" alt="{{ pet.name }}"/>
+        </a>
+        <h3 class="pet-item-header"><a href="{% url 'main:pet_detail' pet.id pet.slug %}">{{ pet.name }}</a></h3>
+        <h6>{{days}} día{{ days| pluralize }} esperando un nuevo hogar.</h6>
+        <p class="pet-item-description">{{ pet.description|truncatechars:140 }} <a href="{% url 'main:pet_detail' pet.id pet.slug %}">Ver más</a>
+        </p>
+    </article>
+{% endfor %}
+    </div>
+    <button id="load-button" class="light round-btn"><i id="load-button-i" class="fa fa-plus"></i></button>
+    <span id="no-results" style="visibility: hidden">No hay más mascotas que mostrar</span>
+</div>
+{% endblock %}
+{% block fab-buttons %}
+<a class="fa-btn" href="#new-adoption">
+    <i class="fa fa-plus"></i>
+</a>
+{% endblock %}
+
+{% block modal %}
+<aside id="new-adoption" class="new-adoption-modal">
+    <div class="adoption-modal-content">
+        <header>
+            <h2>Nueva adopción</h2>
+            <a class="btn-close" href="#">x</a>
+        </header>
+        {% include 'main/new-adoption-form.html' %}
+    </div>
+</aside>
+{% endblock %}
+
+{% block footer %}
+<footer></footer>
+{% endblock%}
+{% block templatejs %}
+<script src="{% static 'js/pets.js' %}"></script>
+{% endblock %}

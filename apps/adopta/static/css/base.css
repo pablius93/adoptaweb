@@ -1,0 +1,370 @@
+/* GENERAL PROPERTIES */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    outline: 0;
+}
+
+::-moz-selection {
+  background: #00A087;
+}
+
+::selection {
+  background: #00A087;
+}
+
+*::-moz-focus-inner {
+  border: 0;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #085D50;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: #085D50;
+}
+
+textarea {
+    width: 100%;
+}
+
+body {
+    background: #DCDCDC;
+}
+
+ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+li i {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    margin-right: 1em;
+}
+
+li {
+    color: white;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: white;
+}
+
+.main-panel a:link,
+.main-panel a:visited,
+.main-panel a:hover,
+.main-panel a:active {
+    text-decoration: none;
+    color: #085D50;
+}
+
+h6 {
+    padding: 0;
+    margin: 0;
+    color: #123131;
+    font-family: 'Roboto';
+}
+
+.sitename {
+    font-size: 24px;
+}
+
+.sitename i {
+    margin: 0 8px 0 8px;
+}
+
+.sitename:hover,
+.sitename:hover a {
+    color: #085D50;
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+}
+
+/* TRANSITION ELEMENTS */
+
+.sidebar,
+.side-item,
+.wrapper,
+.pet-item,
+.pet-item-header,
+.search-button,
+.btn,
+.notification-header-menu,
+.navbar,
+.navbar-right-btns ul li,
+.navbar-left-btns ul li,
+.footer-social ul li,
+.sitename,
+.profile-hidden-menu,
+.profile-hidden-menu-item a,
+.user-btn,
+.footer-social a,
+.pet-update
+{
+    -webkit-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+}
+
+/* BUTTONS */
+
+.btn-adopt {
+    display: inline-block;
+    max-width: 200px;
+    padding: 6px 2em 6px 2em;
+    color: #123131;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    text-transform: capitalize;
+    text-align: center;
+    cursor: pointer;
+}
+
+.fa-btn {
+    display: none;
+    background-color: #7c4dff;
+    width: 1.75em;
+    height: 1.75em;
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    color: #FFF;
+    font-size: 2.5em;
+    cursor: pointer;
+    -webkit-transition: 1s;
+    -webkit-transition: .7s;
+    transition: .7s;
+    position: fixed;
+    bottom: .5em;
+    right: .5em;
+    padding-top: 2px;
+}
+
+.fa-btn:hover {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    background-color: #4e329b;
+}
+
+.round-btn {
+    background-color: #7c4dff;
+    width: 1em;
+    height: 1em;
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    color: #FFF;
+    font-size: 2.5em;
+    cursor: pointer;
+    -webkit-transition: 1s;
+    -webkit-transition: .7s;
+    transition: .7s;
+    bottom: .5em;
+    right: .5em;
+    padding-top: 2px;
+    display: flex;
+    align-self: center;
+}
+
+.round-btn i {
+    align-self: center;
+    font-size: .5em;
+}
+
+.search-button {
+    padding: 8px 0 8px 0;
+    color: #CCC;
+    background-color: white;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+}
+
+.btn {
+    display: inline-block;
+    max-width: 200px;
+    padding: 6px 2em 6px 2em;
+    color: #ffffff;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    text-transform: capitalize;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn i {
+    display: none;
+}
+
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark {
+    border: 0px;
+    border-radius: 4px;
+    background-color: #085D50;
+    color: black;
+}
+
+.dark:hover {
+    background-color: #00A087;
+    color: white;
+}
+
+.btn-close {
+    display: inline-block;
+    color: black;
+    text-align: right;
+}
+
+.light {
+    border: 0px;
+    background-color: #00A087;
+    color: black;
+    text-transform: none;
+}
+
+.light:hover {
+    background-color: #085D50;
+    color: white;
+}
+
+.red {
+    border: 0px;
+    background-color: #c32c38;
+    color: white;
+    text-transform: none;
+}
+
+.red:hover {
+    background-color: #7b1d25;
+    color: white;
+}
+
+.yellow {
+    border: 0px;
+    background-color: #ffc107;
+    color: white;
+    text-transform: none;
+}
+
+.yellow:hover {
+    background-color: #ffa000;
+    color: white;
+}
+
+/* NAVBAR */
+
+.navbar {
+    position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 8888;
+    width: 100%;
+    background-color: #00a087;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-right: 1em;
+}
+
+/* FOOTER */
+
+.footer {
+    font-family: 'Roboto', sans-serif;
+    background: #085D50;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.footer-container {
+    color: #DCDCDC;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    -webkit-column-gap: 3em;
+    -moz-column-gap: 3em;
+    column-gap: 3em;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    padding: .5em;
+}
+
+.footer-container div {
+    max-width: 360px;
+    min-height: 240px;
+    padding: 1em;
+}
+
+.footer-social {
+    z-index: 1111;
+}
+
+.footer-social ul {
+    margin: 0;
+}
+
+.footer-social ul li {
+
+}
+
+.footer-social ul li a {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    padding: 8px;
+}
+
+.footer-social ul li:hover {
+    /*-webkit-transform: scale(1.2);
+    transform: scale(1.2);*/
+
+}
+
+.footer-social a:hover {
+    color: #123131;
+}
+
+@media only screen and (max-width: 860px) {
+    .footer-container {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+
+    }
+
+    .footer-container div {
+        min-height: 0;
+        max-width: 480px;
+    }
+}

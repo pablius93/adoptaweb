@@ -1,0 +1,72 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load adoptions_tags %}
+{% block css %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/pet.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/chat.css' %}" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+{% endblock %}
+
+{% block content %}
+<div class="main-panel">
+    <div id="chat-panel" class="chat-panel">
+        <ul>
+            {% for chat in  chats %}
+            <li class="" id="{{ chat.id }}">
+                <img src="{% get_thumbnail_image chat.pet %}" alt="">
+                <article class="chat-item">
+                    {% if request.user == chat.adoption_user %}
+                    <h5>{{ chat.request_user }} - {{ chat.pet.name }}</h5>
+                    {% else %}
+                    <h5>{{ chat.adoption_user }} - {{ chat.pet.name }}</h5>
+                    {% endif %}
+                </article>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="messages-panel" id="messages-panel">
+        <header onclick="chatPanelAction()">
+            <i id="chat-header-btn" class="fa fa-bars"></i>
+            <img id="chat-header-img" src="" alt="">
+            <h4 id="chat-header-title"></h4>
+        </header>
+        <ul id="chat-messages">
+            <!--
+            <li class="message (mine | yours)">
+                <h5>Username <span>00:00</span></h5>
+                Message content
+            </li>
+            -->
+        </ul>
+        <form action="" method="post" id="chat-form">
+            {% csrf_token %}
+            <input id="input-message" name="message" type="text" class="message-input" maxlength="500" placeholder="Escribe aquí tu mensaje..." autocomplete="off">
+            <button type="button" class="btn light" onclick="sendMessage()"><i class="fa fa-send"></i></button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block modal %}
+<aside id="new-adoption" class="new-adoption-modal">
+    <div class="adoption-modal-content">
+        <header>
+            <h2>Nueva adopción</h2>
+            <a class="btn-close" href="#">x</a>
+        </header>
+        {% include 'main/new-adoption-form.html' %}
+    </div>
+</aside>
+{% endblock %}
+
+{% block templatejs %}
+<script>var myUser = '{{ request.user.username }}'</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+<script src="{% static 'js/chat.js' %}"></script>
+{% endblock %}
+{% block footer %}{% endblock%}

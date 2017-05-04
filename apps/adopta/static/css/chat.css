@@ -1,0 +1,165 @@
+
+.chat-panel ul {
+    margin: 0;
+    padding: 0;
+    border: solid 1px #DCDCDC;
+    border-bottom: none;
+    max-height: 560px;
+    overflow-y: scroll;
+    width: 300px;
+}
+
+.chat-panel {
+    cursor: pointer;
+}
+
+.chat-panel li {
+    color: #123231;
+    border-bottom: solid 1px #DCDCDC;
+    display: flex;
+    align-items: center;
+    padding: .5em;
+}
+
+.chat-panel li:hover {
+    background: #60d1a1;
+}
+
+.chat-panel li img {
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+}
+
+.chat-item {
+    padding: .5em;
+}
+
+.chat-item h5, .message h5 {
+    margin: 0;
+}
+
+.messages-panel {
+    background: #DCDCDC;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.messages-panel form {
+    display: flex;
+    padding: 1em;
+    background: white;
+    border: solid 1px #DCDCDC;
+    border-left: none;
+    min-height: 64px;
+    visibility: hidden;
+}
+
+.messages-panel ul {
+    display: flex;
+    margin: 0;
+    height: 75%;
+    flex-direction: column;
+    align-items: flex-end;
+    overflow-y: scroll;
+}
+
+.messages-panel header {
+    background: #EDEDED;
+    padding: 1em;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+
+.messages-panel h4 {
+    margin: 0 1em;
+    padding: 0;
+}
+
+.messages-panel header img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    margin: 0 0 0 1em;
+}
+
+.messages-panel i {
+    font-size: 1.5em;
+}
+
+.message-input {
+    width: 100%;
+    border: 0;
+    border-bottom: solid 1px #DCDCDC;
+    margin-right: 1em;
+}
+
+.active {
+    background: #53b189;
+}
+
+.message {
+    padding: 1em;
+    border-radius: 8px;
+    margin: 0.2em .5em;
+    max-width: 75%;
+}
+
+.message span {
+    font-size: .75em;
+    margin-left: .5em;
+}
+
+.messages-panel form .btn i {
+    display: inline;
+}
+
+.messages-panel form .btn {
+}
+
+.mine {
+    align-self: flex-end;
+    background: white;
+    color: #123212;
+}
+
+.yours {
+    align-self: flex-start;
+    background: #53b189;
+}
+
+.main-panel {
+    display: flex;
+    flex-direction: row;
+    margin-top: 80px;
+    background: white;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    padding: .5em;
+    min-height: 400px;
+    position: fixed;
+    width: 100%;
+    height: 95%;
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 768px), (max-device-width: 768px) {
+    .main-panel {
+        overflow-x: hidden;
+        height: 100%;
+    }
+
+    .chat-panel {
+        width: 0px;
+        visibility: hidden;
+        max-height: 85%;
+    }
+
+    .messages-panel {
+        max-height: 90%;
+    }
+}

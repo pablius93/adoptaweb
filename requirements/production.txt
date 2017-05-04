@@ -1,0 +1,6 @@
+# Production dependencies
+
+-r base.txt
+
+# WSGI
+gunicorn

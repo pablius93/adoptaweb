@@ -1,0 +1,13 @@
+################
+# REQUIREMENTS #
+################
+
+Requirements are set on requirements directory, within the following files:
+    - base.txt:         Common Python libraries
+    - development.txt:  Development specific libraries
+    - production.txt:   Production specific libraries
+    - system.txt:       System packages that need to be installed
+
+You have to write one package per line;
+In pip files, you can inherit including "-r file.txt"
+

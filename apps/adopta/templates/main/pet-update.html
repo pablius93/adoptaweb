@@ -1,0 +1,7 @@
+{% for pf in updates %}
+<article class="pet-update">
+    <a href="#"><h4><i class="fa fa-user-circle"></i>{{ pet.contact_info.complete_name }}</h4></a>
+    <h6>{{ pf.date }}</h6>
+    <p>{{ pf.content }}</p>
+</article>
+{% endfor %}

@@ -1,0 +1,11 @@
+<form class="adoption-modal-form" method="post" action="{% url 'main:new_pet' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="pet-name">Nombre</label><br>
+    {{ new_pet_form.name }}<br>
+    <label for="pet-description">Descripción</label><br>
+    {{ new_pet_form.description }}<br>
+    <label for="pet-image">Imagen de la mascota: </label>
+    {{ new_pet_form.image }}
+    <br><br>
+    <input class="btn dark" type="submit" value="Publicar">
+</form>

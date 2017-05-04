@@ -1,0 +1,13 @@
+<div class="nav-login">
+    <ul>
+        <li>
+            <form class="navbar-login-form" method="post" action="{% url 'account_login' %}">
+                {% csrf_token %}
+                <i class="fa fa-user"></i>{{ login_form.login }}
+                <i class="fa fa-question"></i>
+                {{ login_form.password }}
+                <input class="btn" type="submit" value="Iniciar sesión">
+            </form>
+        </li>
+    </ul>
+</div>

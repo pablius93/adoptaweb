@@ -1,0 +1,83 @@
+{% load static %}
+{% load i18n %}
+{% load account socialaccount %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'icons/favicon.jpg' %}"/>
+    {% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/intro.css' %}" />
+    {% endblock %}
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <title>{{ SITE_NAME }}</title>
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="navbar">
+            <div>
+                <span class="sitename"><a href="#"><i class="fa fa-paw"></i>{{ SITE_NAME }}</a></span>
+            </div>
+            {% include 'main/navbar-login.html' %}
+        </nav>
+        <div class="banners">
+            <div class="banner-one">
+                <h2><i class="fa fa-paw"></i>{{ SITE_NAME }}</h2>
+                <h4>Ayudamos a encontrar hogar a los animales que la han perdido</h4>
+                <a class="btn dark" href="#login">Entrar</a>
+            </div>
+            <div class="banner-two">
+                <h2>Acerca de nosotros</h2>
+                <h4>Somos una plataforma para colaborar entre todos para acabar con el abandono animal</h4>
+                <div class="banner-two-sections">
+                    <section>
+                        <i class="fa fa-hospital-o"></i>
+                        <h4>Trabajamos directamente con las protectoras de animales</h4>
+                        <a href="#" class="btn light">Ver protectoras</a>
+                    </section>
+                    <section>
+                        <i class="fa fa-feed"></i>
+                        <h4>Nuestro objetivo es acabar con todo tipo de abandono animal. </h4>
+                        <a href="#" class="btn light">Más información</a>
+                    </section>
+                    <section>
+                        <i class="fa fa-group"></i>
+                        <h4>Somos una organización sin ánimo de lucro y abierta a todos.</h4>
+                        <a href="#" class="btn light">¡Colabora con nosotros!</a>
+                    </section>
+                    <section>
+                        <i class="fa fa-exchange"></i>
+                        <h4>Luchamos por asegurar que todas las mascotas tengan una familia.</h4>
+                        <a href="#" class="btn light">Más información</a>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <a class="fa-btn" href="#login">
+            <i class="fa fa-sign-in"></i>
+        </a>
+        <aside id="login" class="modal">
+            <div class="modal-content">
+                <header>
+                    <h2>Iniciar sesión</h2>
+                    <a class="btn-close" href="#">x</a>
+                </header>
+                <form class="modal-login-form" method='post' action="{% url 'account_login' %}">
+                  {% csrf_token %}
+                  <label for="id_username">Nombre de usuario</label><br>
+                  {{ login_form.login }}<br>
+                  <label for="id_password">Contraseña</label><br>
+                  {{ login_form.password }}<br>
+                  {{ login_form.remember }}<label for="id_remember">Recordarme</label><br>
+                  <input class="btn dark" type='submit' value='Iniciar sesión'>
+                </form>
+            </div>
+        </aside>
+        {% include 'main/footer.html' %}
+    </div>
+</body>
+</html>

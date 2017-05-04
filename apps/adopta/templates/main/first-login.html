@@ -1,0 +1,49 @@
+{% extends 'main/base.html' %}
+{% load adoptions_tags %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/fl-info.css' %}" />
+{% endblock %}
+{% block content %}
+
+<div class="main-panel">
+    <article>
+        <img src="http://lorempixel.com/400/200/">
+        <h2>Soy una asociación</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut itaque omnis minima. Illo molestiae rerum ducimus ea voluptatibus quasi nulla molestias earum. Neque ipsa molestiae, unde nobis repellendus, quo ut.</p>
+        <a class="btn dark">Añadir información de contacto</a>
+    </article>
+    <article>
+        <img src="http://lorempixel.com/400/200/">
+        <h2>Soy una persona</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut itaque omnis minima. Illo molestiae rerum ducimus ea voluptatibus quasi nulla molestias earum. Neque ipsa molestiae, unde nobis repellendus, quo ut.</p>
+        <a class="btn dark">Añadir información de contacto</a>
+    </article>
+</div>
+{% endblock %}
+{% block modal %}
+<aside id="organisation" class="info-modal">
+    <div class="info-modal-content">
+        <header>
+            <h2>Información de la asociación</h2>
+            <a class="btn-close" href="#">x</a>
+        </header>
+        {% include 'main/organisation-info-form.html' %}
+    </div>
+</aside>
+
+<aside id="user" class="info-modal">
+    <div class="info-modal-content">
+        <header>
+            <h2>Información del usuario</h2>
+            <a class="btn-close" href="#">x</a>
+        </header>
+        {% include 'main/user-info-form.html' %}
+    </div>
+</aside>
+
+
+{% endblock %}

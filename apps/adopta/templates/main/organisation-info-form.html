@@ -1,0 +1,17 @@
+<form action="{% url 'main:create_organisation' %}" method="post">
+    {% csrf_token %}
+    <label for="assoc-name">Nombre de la asociación</label>
+    {{ organisation_form.name }}<br>
+    <label for="assoc-address">Dirección</label>
+    {{ organisation_form.address }}<br>
+    <label for="assoc-town">Ciudad</label>
+    {{ organisation_form.town }}<br>
+    <label for="assoc-phone-number">Número de teléfono</label>
+    {{ organisation_form.phone_number }}<br>
+    <label for="assoc-web">Página web</label>
+    {{ organisation_form.web }}<br>
+    <label for="assoc-email">Correo electrónico</label>
+    {{ organisation_form.email }}<br>
+    {{ organisation_form.organisation }}
+    <input class="btn dark" type="submit" value="Guardar">
+</form>

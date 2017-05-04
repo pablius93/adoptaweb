@@ -1,0 +1,98 @@
+/***
+    You can customize your site here
+***/
+
+/* Colors */
+.primary-color.site {
+    background-color: #800040 !important;
+}
+
+.a {
+    color: #b91e1e !important;
+}
+
+
+/* Other stuff */
+.body-content {
+    padding-top: 100px !important;
+}
+
+.form-control.textarea-input {
+    height: 240px;
+}
+
+.form-control.textarea-comment {
+    height: 120px;
+}
+
+.comment-section {
+    margin-top: 8em;
+    padding-top: 1em;
+}
+
+.comment-block {
+    padding-bottom: 0em;
+}
+
+.card-text {
+    padding-bottom: 2em;
+}
+
+
+
+.description {
+    padding-bottom: 2em;
+}
+
+.divider-new {
+    margin-top: 16px;
+}
+
+.comments-section {
+    position: relative;
+}
+
+.comment-container {
+    padding-top: 1em;
+}
+
+.comment-margin {
+    margin-top: 8em;
+}
+
+.proposal-text {
+    padding-bottom: 2em;
+}
+
+.proposal-button-group {
+    padding-bottom: 2em;
+}
+
+.options-card {
+    padding: 1.5em;
+}
+
+.page-wrapper {
+  min-height: 100%;
+  /* equal to footer height */
+    margin-bottom: 15%;
+}
+
+.page-wrapper:after {
+  content: "";
+  display: block;
+}
+
+.page-footer, .page-wrapper:after {
+  /* .push must be the same height as footer */
+}
+
+.small-content-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
+
+.main-content {
+    margin-top: 5em;
+}

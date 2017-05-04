@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+{% load adoptions_tags %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+<div class="main-panel">
+    <h1>{{ info.complete_name }}</h1>
+</div>
+{% endblock %}
