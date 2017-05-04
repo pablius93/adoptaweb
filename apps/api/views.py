@@ -7,11 +7,12 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.utils.datastructures import MultiValueDictKeyError
 from django.db.models import Q
 
-from .models import *
+from apps.adopta.models import *
 from django.core import serializers
 import json
-from config.settings.base import *
-from .models import ApiKeys
+from config.settings.base import MEDIA_URL
+from apps.adopta.settings import *
+from apps.api.models import ApiKeys
 from apps.adopta.utils.str_utils import smart_truncate
 from apps.adopta.templatetags.adoptions_tags import get_days_waiting
 

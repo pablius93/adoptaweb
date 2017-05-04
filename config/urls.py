@@ -21,7 +21,7 @@ urlpatterns = [
 
     # Your apps
     url(r'^', include('apps.adopta.urls', namespace='main')),
-    url(r'^', include('apps.adopta.urls', namespace='api')),
+    url(r'^api/', include('apps.api.urls', namespace='api')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += staticfiles_urlpatterns()
