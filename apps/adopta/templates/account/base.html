@@ -1,6 +1,47 @@
 {% extends "main/base.html" %}
+{% load static %}
 {% block title %}{% block head_title %}{% endblock head_title %}{% endblock title %}
+{% if request.user.is_authenticated %}
+{% else %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+<style>
+  .main-panel form {
+    display: flex;
+    max-width: 480px;
+    flex-direction: column;
+  }
 
+
+</style>
+{% endblock %}
+{% block navbar %}
+<nav id="navbar" class="navbar">
+    <div class="navbar-left-btns">
+       <span class="sitename"><a href="{% url 'main:index' %}"><i class="fa fa-paw"></i>{{ SITE_NAME }}</a></span>
+    </div>
+    <div class="navbar-right-btns">
+      <div class="nav-login">
+          <ul>
+              <li>
+                  <form class="navbar-login-form" method="post" action="{% url 'account_login' %}">
+                      {% csrf_token %}
+                      <i class="fa fa-user"></i>
+                      <input type="text" name="login">
+                      <i class="fa fa-question"></i>
+                      <input type="password" name="password">
+                      <input class="btn" type="submit" value="Iniciar sesión">
+                  </form>
+              </li>
+          </ul>
+      </div>
+    </div>
+</nav>
+
+
+{% endblock%}
+{% endif %}
 {% block content %}
 <div class="main-panel">
   {% block inner %}{% endblock %}

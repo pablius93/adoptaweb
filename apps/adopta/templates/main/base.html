@@ -25,13 +25,13 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   </head>
   <body>
+      {% if request.user.is_authenticated %}
       {% include 'main/sidebar.html' %}
-      <div id="wrapper" class="wrapper">
-      {% if user.is_authenticated %}
-        {% include 'main/navbar.html' %}
-      {% else %}
-        {% include 'main/navbar-login.html' %}
       {% endif %}
+      <div id="wrapper" class="wrapper">
+        {% block navbar %}
+          {% include 'main/navbar.html' %}
+        {% endblock %}
     {% block content %}{% endblock content%}
 
     {% block modal %}{% endblock modal %}
