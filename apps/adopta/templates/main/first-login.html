@@ -8,19 +8,28 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/fl-info.css' %}" />
 {% endblock %}
 {% block content %}
-
+<style>
+.btn {
+    color: black;
+}
+.info-modal:target {
+  z-index: 11111;
+  opacity: 1;
+  pointer-events: auto;
+}
+</style>
 <div class="main-panel">
     <article>
-        <img src="http://lorempixel.com/400/200/">
+        <img src="">
         <h2>Soy una asociación</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut itaque omnis minima. Illo molestiae rerum ducimus ea voluptatibus quasi nulla molestias earum. Neque ipsa molestiae, unde nobis repellendus, quo ut.</p>
-        <a class="btn dark">Añadir información de contacto</a>
+        <a class="btn dark" style="color: black" href="#organisation">Añadir información de contacto</a>
     </article>
     <article>
-        <img src="http://lorempixel.com/400/200/">
-        <h2>Soy una persona</h2>
+        <img src="">
+        <h2>Soy un usuario</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut itaque omnis minima. Illo molestiae rerum ducimus ea voluptatibus quasi nulla molestias earum. Neque ipsa molestiae, unde nobis repellendus, quo ut.</p>
-        <a class="btn dark">Añadir información de contacto</a>
+        <a class="btn dark" style="color: black" href="#user">Añadir información de contacto</a>
     </article>
 </div>
 {% endblock %}

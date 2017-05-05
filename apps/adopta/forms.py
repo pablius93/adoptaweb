@@ -63,7 +63,7 @@ class AdoptionRequestForm(forms.Form):
 
 class SearchForm(forms.Form):
     q = forms.CharField(
-        required=True,
+        required=False,
         max_length=140,
         widget=forms.TextInput(
             {

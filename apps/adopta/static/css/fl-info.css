@@ -21,7 +21,13 @@
     max-width: 100%;
 }
 
-info-modal:target {
+#user:target {
+    z-index: 11111;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#organisation:target {
     z-index: 11111;
     opacity: 1;
     pointer-events: auto;
@@ -40,9 +46,23 @@ info-modal:target {
 }
 
 .info-modal-content {
-    display: flex;
     margin: 100px 30%;
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 8px;
     justify-content: center;
+    min-width: 300px;
+}
+
+.info-modal-content header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.info-modal-content header a {
+    color: black;
 }
 
 @media only screen and (max-width: 760px) {
