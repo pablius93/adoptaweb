@@ -8,7 +8,7 @@ function contactInfoMap() {
                              .replace(/^-+/, '')
                              .replace(/-+$/, '');
     console.log(fullAddress);
-    $.get('http://maps.google.com/maps/api/geocode/json', {'address': fullAddress})
+    $.get('https://maps.google.com/maps/api/geocode/json', {'address': fullAddress})
         .done(
             function(data, status)
             {
