@@ -1,5 +1,6 @@
 cat docs/info/docker.txt
 
+source env/dev/bin/activate
 echo "Starting docker db container"
 docker-compose -f docker-compose.dev.yml start
 

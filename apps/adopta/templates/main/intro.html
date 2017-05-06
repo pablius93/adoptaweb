@@ -73,6 +73,7 @@
                   <label for="id_password">Contraseña</label><br>
                   {{ login_form.password }}<br>
                   {{ login_form.remember }}<label for="id_remember">Recordarme</label><br>
+                  <a href="{% url 'account_signup' %}">¿No tienes cuenta? ¡Regístrate aquí!</a>
                   <input class="btn dark" type='submit' value='Iniciar sesión'>
                 </form>
             </div>

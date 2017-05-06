@@ -47,6 +47,7 @@
            <div id="map"></div>
            <header><h2>Información detallada</h2></header>
            <table id="contact-info-table">
+              {% if contact_info %}
                <tr>
                    <td>Dueño: </td>
                    <td id="cell-pet-owner">{{ contact_info.complete_name }}</td>
@@ -63,6 +64,25 @@
                    <td>Teléfono de contacto: </td>
                    <td id="cell-phone-number">{{ contact_info.phone_number }}</td>
                </tr>
+               {% endif %}
+               {% if organisation %}
+               <tr>
+                   <td>Protectora</td>
+                   <td id="cell-pet-owner">{{ organisation.name }}</td>
+               </tr>
+               <tr>
+                   <td>Dirección: </td>
+                   <td id="cell-address">{{ organisation.address }}</td>
+               </tr>
+               <tr>
+                   <td>Localidad: </td>
+                   <td id="cell-city">{{ organisation.city }}</td>
+               </tr>
+               <tr>
+                   <td>Teléfono de contacto: </td>
+                   <td id="cell-phone-number">{{ organisation.phone_number }}</td>
+               </tr>
+               {% endif %}
            </table>
        </div>
        <div class="pet-info-updates" id="pet-info-updates">

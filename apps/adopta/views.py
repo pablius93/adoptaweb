@@ -86,10 +86,18 @@ def pet_detail(request, pet_id, slug):
     pet_form = NewPetForm()
     adoption_request_form = AdoptionRequestForm()
     contact_info = None
+    organisation = None
+    is_org = False
     try:
         contact_info = UserInfo.objects.get(user=p.owner)
     except ObjectDoesNotExist:
         print('Contact Info does not exist')
+    try:
+        organisation = Organisation.objects.get(user=p.owner)
+        is_org = True
+    except ObjectDoesNotExist:
+        print('Organisation does not exist')
+
     if p.slug != slug:
         raise Http404
     return render(
@@ -103,6 +111,8 @@ def pet_detail(request, pet_id, slug):
             'pet_update_form': NewPetUpdateForm(),
             'updates': updates,
             'contact_info': contact_info,
+            'organisation': organisation,
+            'is_org': is_org,
         }
     )
 

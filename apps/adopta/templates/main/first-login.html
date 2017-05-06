@@ -10,26 +10,31 @@
 {% block content %}
 <style>
 .btn {
-    color: black;
+    color: white;
 }
 .info-modal:target {
   z-index: 11111;
   opacity: 1;
   pointer-events: auto;
 }
+
+article img {
+  width: 480px;
+  height: 480px;
+}
 </style>
 <div class="main-panel">
     <article>
-        <img src="">
+        <img src="{% static 'img/logo1.jpg' %}">
         <h2>Soy una asociación</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut itaque omnis minima. Illo molestiae rerum ducimus ea voluptatibus quasi nulla molestias earum. Neque ipsa molestiae, unde nobis repellendus, quo ut.</p>
-        <a class="btn dark" style="color: black" href="#organisation">Añadir información de contacto</a>
+        <a class="btn dark" style="color: white" href="#organisation">Añadir información de contacto</a>
     </article>
     <article>
-        <img src="">
+        <img src="{% static 'img/logo2.png' %}">
         <h2>Soy un usuario</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut itaque omnis minima. Illo molestiae rerum ducimus ea voluptatibus quasi nulla molestias earum. Neque ipsa molestiae, unde nobis repellendus, quo ut.</p>
-        <a class="btn dark" style="color: black" href="#user">Añadir información de contacto</a>
+        <a class="btn dark" style="color: white" href="#user">Añadir información de contacto</a>
     </article>
 </div>
 {% endblock %}
