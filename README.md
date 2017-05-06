@@ -15,7 +15,7 @@ Desplegar web:
 
 ### Pre-requisitos
 
-- Python 3.6
+- Python 3.5
 - Virtualenv
 - Docker
 
@@ -24,7 +24,7 @@ Desplegar web:
 - [Atom](https://github.com/atom/atom)
 - [Python 3.5](https://www.python.org/)
 - [Django](https://www.djangoproject.com/)
-- [Django Rest Framework](www.django-rest-framework.org/)
+- [Django Rest Framework](https://www.django-rest-framework.org/)
 - [Django Rest Auth](https://github.com/Tivix/django-rest-auth)
 
 

@@ -174,7 +174,7 @@ LOGIN_URL = 'account_login'
 
 SITE_NAME = 'AdoptaWeb'
 
-COPYRIGHT = '&copy; Pablo Moreno, 2017'
+COPYRIGHT = 'Pablo Moreno, 2017'
 MEDIA_URL = '/media/'
 GOOGLE_MAPS_API_KEY = env('GOOGLE_MAPS_API_KEY')
 META_DESCRIPTION = 'Página web de adopciones de animales abandonados'

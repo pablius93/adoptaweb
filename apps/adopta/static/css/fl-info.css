@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: row;
 }
 
 .main-panel article {
@@ -59,6 +60,16 @@
     flex-direction: row;
     justify-content: space-between;
 
+}
+
+.info-modal form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-modal form input {
+  margin: .25em
 }
 
 .info-modal-content header a {

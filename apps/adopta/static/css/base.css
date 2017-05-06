@@ -295,7 +295,7 @@ h6 {
 
 .footer {
     font-family: 'Roboto', sans-serif;
-    background: #085D50;
+    /*background: #085D50;*/
     width: 100%;
     bottom: 0;
     left: 0;
@@ -305,20 +305,17 @@ h6 {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+    padding: 2em;
 }
 
 .footer-container {
+    display: flex;
+    justify-content: center;
     color: #DCDCDC;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 4px;
-    -webkit-column-gap: 3em;
-    -moz-column-gap: 3em;
-    column-gap: 3em;
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
     padding: .5em;
 }
 
@@ -326,14 +323,27 @@ h6 {
     max-width: 360px;
     min-height: 240px;
     padding: 1em;
+    justify-content: center;
 }
 
 .footer-social {
     z-index: 1111;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-social * {
+    display: flex;
+    justify-content: center;
 }
 
 .footer-social ul {
     margin: 0;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    color: black;
+    justify-content: center;
 }
 
 .footer-social ul li {
@@ -341,6 +351,7 @@ h6 {
 }
 
 .footer-social ul li a {
+    color: #085D50;
     display: block;
     font-family: 'Roboto', sans-serif;
     padding: 8px;

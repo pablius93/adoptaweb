@@ -30,8 +30,8 @@
            <div class="pet-adoption-btn-section">
              <div>
                  {% if request.user == pet.owner %}
-                 <a href="#" class="btn red">Eliminar</a>
-                 <a href="#" class="btn yellow">Editar</a>
+                 <a href="{% url 'main:delete_pet' pet.id pet.slug %}" class="btn red">Eliminar</a>
+                 <!--<a href="#" class="btn yellow">Editar</a>-->
                  {% endif %}
              </div>
              <div>
