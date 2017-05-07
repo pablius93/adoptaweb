@@ -153,7 +153,7 @@ class UserInfoForm(forms.Form):
         widget=forms.TextInput(
             {
                 'id': 'assoc-contact-info-name',
-                'placeholder': 'Nombre de la asociación',
+                'placeholder': 'Escribe tu nombre completo',
             }
         )
     )
