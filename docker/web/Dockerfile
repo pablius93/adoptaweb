@@ -4,4 +4,4 @@ RUN mkdir /web
 WORKDIR /web
 ADD . /web/
 RUN pip install -r requirements/development.txt
-RUN sh scripts/install_system_requirements.sh
+RUN sh /web/scripts/install_system_requirements.sh

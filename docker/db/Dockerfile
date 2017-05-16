@@ -1,4 +1,4 @@
 FROM postgres:9.6-alpine
 ENV POSTGRES_DB=adopta
-ENV POSTGRES_USER=pablo
-ENV POSTGRES_PASSWORD=1234
+ENV POSTGRES_USER=youruser
+ENV POSTGRES_PASSWORD=yoursupersecretpassword
